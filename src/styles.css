@@ -1,0 +1,73 @@
+body {
+    background-color: #98b3d1;
+    color: #333;
+    font-family: "Poiret One", serif;
+    font-size: x-large;
+}
+
+.card {
+    box-shadow: 8px 8px 5px 0.5px #718296;
+}
+
+h1 {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.tituloEditable{
+    font-family: "Fredericka the Great", serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-style: normal;
+    border: none;
+    outline: none;
+    text-align: center;
+    background: transparent;
+    width: 100%;
+}
+
+.btn:hover {
+    text-decoration: underline;
+  }
+
+thead th {
+    font-weight: normal;
+  }
+
+.listaTitle {
+   font-family: "Fredericka the Great","Mr Dafoe", serif;
+   font-weight: 400;
+   font-style: normal;
+   font-size: 3rem;
+   
+}
+
+.lista {
+    text-align: end;
+    font-family: 'Amatic SC', sans-serif;
+}
+
+
+.lista td:nth-child(2), .lista th{
+    text-align: start;
+}
+
+@media (max-width: 768px) {
+
+    .filaNota {
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+    .td{
+        flex: 1 1 50%;
+        padding: 10px;
+        border: none;
+    }
+    .filasExtra {
+        display: block; 
+        flex: 1 1 50%;
+    }
+}

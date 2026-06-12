@@ -5,7 +5,7 @@ const ListaNotas = ({ notas, confirmarBorrado, setNota }) => {
     
       <div className="card lista">
         <div className="card-header text-center ps-4 listaTitle">
-          Lista de tareas
+          To-do list
         </div>
         <div className="card-body">
           <table className="table">
@@ -13,10 +13,10 @@ const ListaNotas = ({ notas, confirmarBorrado, setNota }) => {
               {notas && notas.length
                 ? (
                   notas.map((nota, index) => (
-                    <Nota confirmarBorrado={confirmarBorrado} key={index} nota={nota} setNota={setNota} />))
+                    <Note confirmarBorrado={confirmarBorrado} key={index} nota={nota} setNota={setNota} />))
                 ) : (
                   <tr>
-                    <th colSpan={5} scope="row"><h3>No hay notas guardadas</h3></th>
+                    <th colSpan={5} scope="row"><h3>There aren't notes yet</h3></th>
                   </tr>
                 )
               }

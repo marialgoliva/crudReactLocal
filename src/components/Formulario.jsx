@@ -7,6 +7,7 @@ const Formulario = ({setNotas, notas, nota, setNota}) => {
     const [color, setColor] = useState("#98b3d1")
     const [fecha, setFecha] = useState(new Date().toISOString().split('T')[0])
     const [error, setError] = useState(false)
+    const [state, setState] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -22,6 +23,7 @@ const Formulario = ({setNotas, notas, nota, setNota}) => {
             descripcion,
             color,
             fecha,
+            state
         }
         if(nota.id){
             obj.id = nota.id

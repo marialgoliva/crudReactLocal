@@ -1,6 +1,6 @@
 import Nota from "./Nota"
 
-const ListaNotas = ({ notas, confirmarBorrado, setNota }) => {
+const ListaNotas = ({ notas, confirmarBorrado, setNota, cambiarEstado }) => {
   return (
     
       <div className="card lista">
@@ -13,10 +13,16 @@ const ListaNotas = ({ notas, confirmarBorrado, setNota }) => {
               {notas && notas.length
                 ? (
                   notas.map((nota, index) => (
-                    <Nota confirmarBorrado={confirmarBorrado} key={index} nota={nota} setNota={setNota} />))
+                    <Nota 
+                    confirmarBorrado={confirmarBorrado} 
+                    key={nota.id || index} 
+                    nota={nota} 
+                    setNota={setNota} 
+                    cambiarEstado={cambiarEstado} 
+                    />))
                 ) : (
                   <tr>
-                    <th colSpan={5} scope="row"><h3>There aren't notes yet</h3></th>
+                    <th colSpan={5} scope="row"><h3>There aren&apos;t notes yet</h3></th>
                   </tr>
                 )
               }

@@ -8,7 +8,7 @@ import Modal from "./components/Modal"
 const App = () => {
 
   const [nota, setNota] = useState({})
-  const [notas, setNotas] = useState(JSON.parse(localStorage.getItem('notas')) ?? [])
+  const [notas, setNotas] = useState(JSON.parse(localStorage.getItem('notas')) ?? []);
   const [notaBorrar, setNotaBorrar] = useState(null)
   const [showModal, setShowModal] = useState(false)
 
@@ -23,10 +23,21 @@ const App = () => {
     setShowModal(true)
   }
 
-  const borrar = (id) => {
+  const borrar = () => {
     const notasFiltradas = notas.filter(nota => nota.id !== notaBorrar)
     setNotas(notasFiltradas)
     setNotaBorrar(null)
+  }
+
+  const cambiarEstado = (id) => {
+    const notasActualizadas = notas.map(nota => {
+      if (nota.id === id) {
+        return { ...nota, state: !nota.state}
+      }
+      return nota
+    })
+    setNotas(notasActualizadas)
+    
   }
 
   return (
@@ -37,7 +48,13 @@ const App = () => {
             <Formulario notas={notas} setNotas={setNotas} nota={nota} setNota={setNota} />
           </div>
           <div className="col-lg-8 mt-2 p-1">
-            <ListaNotas confirmarBorrado={confirmarBorrado} notas={notas} setNota={setNota} nota={nota} />
+            <ListaNotas 
+            confirmarBorrado={confirmarBorrado} 
+            notas={notas} 
+            setNota={setNota} 
+            nota={nota} 
+            cambiarEstado={cambiarEstado}
+            />
           </div>
 
           {showModal && <Modal
@@ -48,12 +65,12 @@ const App = () => {
         </div>
       </div>
       <footer className="text-center py-3 m-5 border-top fs-6">
-        <p className="mb-1">
+        <div className="mb-1">
           Esta es una aplicación sencilla de notas o tareas creada con <strong>React</strong>. Los estilos están hechos con <strong>CSS</strong> y <strong>Bootstrap</strong>.
           <p>
             Las notas se guardan únicamente en el <strong>localStorage</strong> del navegador.
           </p>
-        </p>
+        </div>
         <p className="mt-2">
           Hecho con ❤️ por <a href="https://github.com/marialgoliva" target="_blank" rel="noopener noreferrer">María</a>
         </p>

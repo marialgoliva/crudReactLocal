@@ -13,7 +13,7 @@ const ListaNotas = ({ notas, confirmarBorrado, setNota }) => {
               {notas && notas.length
                 ? (
                   notas.map((nota, index) => (
-                    <Note confirmarBorrado={confirmarBorrado} key={index} nota={nota} setNota={setNota} />))
+                    <Nota confirmarBorrado={confirmarBorrado} key={index} nota={nota} setNota={setNota} />))
                 ) : (
                   <tr>
                     <th colSpan={5} scope="row"><h3>There aren't notes yet</h3></th>

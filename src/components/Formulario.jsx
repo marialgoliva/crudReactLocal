@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Error from "./Error"
 
 const Formulario = ({setNotas, notas, nota, setNota}) => {
-    const [titulo, setTitulo] = useState('Tengo que...')
+    const [titulo, setTitulo] = useState('To do...')
     const [descripcion, setDescripcion] = useState('')
     const [color, setColor] = useState("#98b3d1")
     const [fecha, setFecha] = useState(new Date().toISOString().split('T')[0])
@@ -41,7 +41,7 @@ const Formulario = ({setNotas, notas, nota, setNota}) => {
     }
 
     const limpiarCampos = () => {
-        setTitulo('Tengo que...')
+        setTitulo('To do...')
         setDescripcion('')
         setColor("#98b3d1")
         setFecha(new Date().toISOString().split('T')[0])
@@ -65,25 +65,25 @@ const Formulario = ({setNotas, notas, nota, setNota}) => {
                 <div className="card pt-2">
                     <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} className="tituloEditable" autoFocus/>
                     {
-                        error && <Error mensaje='La descripción es obligatoria.'/>
+                        error && <Error mensaje='Description is required'/>
                     }
                     <div className="card-body">
                         <div className="input-group mb-3">
-                            <textarea type="text" className="form-control" value={descripcion} onChange={(e)=>setDescripcion(e.target.value)} placeholder="Descripción" rows="4"/>
+                            <textarea type="text" className="form-control" value={descripcion} onChange={(e)=>setDescripcion(e.target.value)} placeholder="Description" rows="4"/>
                         </div>
                         <div className="input-group mb-3 d-flex justify-content-around">
                             <label htmlFor="colorInput" className="col-form-label fs-6 w-25">Color</label>
                             <input type="color" className="form-control form-control-color" id="colorInput" value={color} onChange={(e)=>setColor(e.target.value)} />
                         </div>
                         <div className="input-group mb-3 d-flex">
-                        <label htmlFor="colorInput" className="col-form-label fs-6 w-100 text-start">Fecha de finalización</label>
+                        <label htmlFor="colorInput" className="col-form-label fs-6 w-100 text-start">Last date</label>
                             <input type="date" className="form-control" value={fecha} onChange={(e)=>setFecha(e.target.value)}/>
                         </div>
                     
                         <div className="d-flex justify-content-end ">
                             <button type="submit" className="btn" >{
-                        nota.id ? 'Editar' : 'Guardar'}</button>
-                            <button onClick={limpiarCampos} type="button" className="btn my-2">Borrar</button>
+                        nota.id ? 'Edit' : 'Save'}</button>
+                            <button onClick={limpiarCampos} type="button" className="btn my-2">Delete</button>
                         </div>
                     </div>
                 </div>

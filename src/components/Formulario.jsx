@@ -63,7 +63,7 @@ const Formulario = ({setNotas, notas, nota, setNota}) => {
         
             <form onSubmit={handleSubmit}>
                 <div className="card pt-2">
-                    <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} className="tituloEditable" autoFocus/>
+                    <input type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} className="tituloEditable" autoFocus onFocus={(e) => e.target.select()}/>
                     {
                         error && <Error mensaje='Description is required'/>
                     }

@@ -9,11 +9,11 @@ function Modal({notaBorrar, borrar, cancelar}) {
           <button type="button" onClick={() => cancelar()} className="btn-close"></button>
         </div>
         <div className="modal-body">
-          <p>¿Seguro que quieres borrarla?</p>
+          <p>Are you sure you want to delete it?</p>
         </div>
         <div className="modal-footer">
-        <button onClick={cancelar} className="btn btn-secondary">Cancelar</button>
-        <button onClick={borrar} className="btn btn-danger">Borrar</button>
+        <button onClick={cancelar} className="btn btn-secondary">Cancel</button>
+        <button onClick={borrar} className="btn btn-danger">Delete</button>
         </div>
       </div>
     </div>

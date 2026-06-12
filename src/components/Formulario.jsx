@@ -72,7 +72,7 @@ const Formulario = ({setNotas, notas, nota, setNota}) => {
                             <textarea type="text" className="form-control" value={descripcion} onChange={(e)=>setDescripcion(e.target.value)} placeholder="Description" rows="4"/>
                         </div>
                         <div className="input-group mb-3 d-flex justify-content-around">
-                            <label htmlFor="colorInput" className="col-form-label fs-6 w-25">Color</label>
+                            <label htmlFor="colorInput" className="col-form-label fs-6 w-25">Colour</label>
                             <input type="color" className="form-control form-control-color" id="colorInput" value={color} onChange={(e)=>setColor(e.target.value)} />
                         </div>
                         <div className="input-group mb-3 d-flex">
